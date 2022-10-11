@@ -18,6 +18,7 @@ header .HeaderButton {
 
 main {
   display: flex;
+  flex: 1;
   justify-content: center; }
   main .logoArea {
     margin-top: 120px;
@@ -26,14 +27,45 @@ main {
     justify-content: flex-end;
     align-items: flex-end; }
     main .logoArea .logo {
-      width: 400px; }
+      width: 300px; }
     main .logoArea .logo-text {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       letter-spacing: 0.01rem;
-      font-weight: 700;
+      font-weight: 900;
       margin-top: 10px;
       color: #484949;
       text-transform: uppercase;
       margin-bottom: 1rem;
       position: relative;
-      right: -70px; }
+      right: -50px; }
+
+footer {
+  background: rgba(41, 78, 152, 0.72);
+  padding: 30px; }
+  footer .container {
+    max-width: 1200px;
+    margin: auto; }
+    footer .container .row {
+      display: flex; }
+  footer .column-2 {
+    padding: 30px;
+    max-width: 500px; }
+    footer .column-2 address {
+      font-style: normal;
+      font-size: 18px;
+      line-height: 21px; }
+      footer .column-2 address h3 {
+        margin: 0;
+        font-weight: 700;
+        color: #fff; }
+      footer .column-2 address p {
+        color: #fff;
+        font-weight: 400;
+        margin: 0 0 40px 0; }
+      footer .column-2 address strong {
+        color: #fff;
+        font-weight: 700; }
+        footer .column-2 address strong a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: 700; }

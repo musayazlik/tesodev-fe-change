@@ -1,0 +1,39 @@
+header .buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 30px 0 0; }
+
+header .HeaderButton {
+  padding: 20px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #204080;
+  border-radius: 14px;
+  border: 0;
+  transition: background-color 0.3s ease-in-out; }
+  header .HeaderButton:hover {
+    background-color: #4f75c2;
+    cursor: pointer; }
+
+main {
+  display: flex;
+  justify-content: center; }
+  main .logoArea {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end; }
+    main .logoArea .logo {
+      width: 400px; }
+    main .logoArea .logo-text {
+      font-size: 1.2rem;
+      letter-spacing: 0.01rem;
+      font-weight: 700;
+      margin-top: 10px;
+      color: #484949;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      position: relative;
+      right: -70px; }

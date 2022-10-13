@@ -1,2 +1,61 @@
-.deneme {
-  color: red; }
+.ListPageHeader {
+  padding: 30px;
+  display: flex;
+  width: 100%; }
+  .ListPageHeader .ListPageHeader__Prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px 0 40px; }
+    .ListPageHeader .ListPageHeader__Prev:hover {
+      cursor: pointer; }
+    .ListPageHeader .ListPageHeader__Prev img {
+      margin-right: 10px; }
+    .ListPageHeader .ListPageHeader__Prev h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #484949;
+      margin: 0; }
+
+.context {
+  margin: 60px 0 200px 230px;
+  width: 50%; }
+  .context .inputItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 40px; }
+    .context .inputItem label {
+      margin-bottom: 10px;
+      color: #686868;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 21px; }
+    .context .inputItem input {
+      border: 1.5px solid #484848;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 21px; }
+      .context .inputItem input::placeholder {
+        color: rgba(100, 100, 100, 0.5);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 21px; }
+  .context .formButton {
+    display: flex;
+    justify-content: flex-end; }
+    .context .formButton button {
+      background-color: #204080;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 21px;
+      padding: 14px 50px;
+      transition: all 0.3s ease-in-out; }
+      .context .formButton button:hover {
+        background-color: #4f75c2;
+        cursor: pointer; }

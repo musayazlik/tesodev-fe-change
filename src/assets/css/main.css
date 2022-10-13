@@ -1,14 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  min-height: 100vh; }
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+  font-family: 'Roboto', sans-serif; }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
@@ -18,3 +11,13 @@ code {
 
 .position-relative {
   position: relative; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.row {
+  display: flex; }
+
+.flex-column {
+  flex-direction: column; }

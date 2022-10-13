@@ -1,34 +1,16 @@
-header .buttonWrapper {
+main.mainPageContext {
   display: flex;
-  justify-content: flex-end;
-  padding: 30px 30px 0 0; }
-
-header .HeaderButton {
-  padding: 20px 40px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #fff;
-  background-color: #204080;
-  border-radius: 14px;
-  border: 0;
-  transition: background-color 0.3s ease-in-out; }
-  header .HeaderButton:hover {
-    background-color: #4f75c2;
-    cursor: pointer; }
-
-main {
-  display: flex;
-  flex: 1;
-  justify-content: center; }
-  main .logoArea {
+  flex-direction: column;
+  align-items: center; }
+  main.mainPageContext .logoArea {
     margin-top: 120px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end; }
-    main .logoArea .logo {
+    justify-content: center;
+    align-items: center; }
+    main.mainPageContext .logoArea .logo {
       width: 300px; }
-    main .logoArea .logo-text {
+    main.mainPageContext .logoArea .logo-text {
       font-size: 0.9rem;
       letter-spacing: 0.01rem;
       font-weight: 900;
@@ -37,7 +19,35 @@ main {
       text-transform: uppercase;
       margin-bottom: 1rem;
       position: relative;
-      right: -50px; }
+      right: -140px; }
+  main.mainPageContext .searchArea label {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #484949;
+    margin: 40px 0 10px 0;
+    display: block; }
+  main.mainPageContext .searchArea .inputArea {
+    display: flex;
+    margin-bottom: 400px; }
+    main.mainPageContext .searchArea .inputArea input {
+      width: 600px;
+      margin-right: 10px;
+      margin-top: 0 !important;
+      border: 0;
+      border-radius: 14px;
+      padding: 0 20px 0 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: 2px solid #204080;
+      color: #484949;
+      margin-top: 10px;
+      transition: background-color 0.3s ease-in-out; }
+    main.mainPageContext .searchArea .inputArea .searchIcon {
+      position: absolute;
+      top: 20px;
+      left: 14px; }
+      main.mainPageContext .searchArea .inputArea .searchIcon img {
+        width: 24px; }
 
 footer {
   background: rgba(41, 78, 152, 0.72);

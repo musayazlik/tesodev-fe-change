@@ -21,3 +21,8 @@ Button {
     cursor: pointer;
   }
 }
+
+.buttonDisable button {
+  background-color: $lightBlue;
+  pointer-events: none;
+}

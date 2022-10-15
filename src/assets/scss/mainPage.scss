@@ -66,6 +66,74 @@ main.mainPageContext {
         }
       }
     }
+
+    .dropdown {
+      top: 170px;
+      width: 88%;
+      border: $dropdownMenuBorder;
+      border-radius: 24px;
+      padding: 20px 30px;
+      left: -40px;
+
+      .dropdown-content {
+        .dropdown-item {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 20px;
+
+          .line {
+            height: 1px;
+            background: $dropdownMenuLine;
+            width: calc(100% - 38px);
+            transform: translateX(38px);
+            margin-top: 6px;
+          }
+
+          .dropdown-item-context {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .dropdown-icon {
+              img {
+                width: 30px;
+                margin-top: 4px;
+              }
+            }
+            .dropdown-text {
+              b {
+                font-size: 16px;
+                line-height: 20px;
+                margin: 0;
+                color: $text-black;
+              }
+              p {
+                font-size: 14px;
+                line-height: 16px;
+                margin: 0;
+
+                color: $text-extralight;
+              }
+            }
+          }
+        }
+
+        .showMore {
+          width: 100%;
+          text-align: center;
+
+          b {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: $text-black;
+            margin-top: 10px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

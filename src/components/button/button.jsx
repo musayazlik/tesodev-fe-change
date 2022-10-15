@@ -5,7 +5,7 @@ import './buttonStyle.scss'
 const button = ({ text, customClass, onClick }) => {
   return (
     <>
-      <div className={` ${customClass ? customClass : ''}`}>
+      <div className={`${customClass ? customClass : ''}`}>
         <button onClick={() => onClick?.()} className='HeaderButton'>
           {text}
         </button>

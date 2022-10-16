@@ -17,7 +17,7 @@ const Search = () => {
     e.preventDefault()
     const searchValue = e.target.value
     if (searchValue.length >= 2) {
-      setDataFilter(data.filter((item) => item.NameSurname.toLowerCase().includes(searchValue.toLowerCase())))
+      setDataFilter(data.filter((item) => item.nameSurname.toLowerCase().includes(searchValue.toLowerCase())))
       setStatus({ button: true, dropdown: true })
     } else {
       setDataFilter(data)
@@ -60,8 +60,8 @@ const Search = () => {
                         <img src={DropdownIcon} alt='Search Icon' />
                       </div>
                       <div className='dropdown-text'>
-                        <b>{item.NameSurname}</b>
-                        <p>{item.Country}</p>
+                        <b>{item.nameSurname}</b>
+                        <p>{item.country}</p>
                       </div>
                     </div>
                     <span className='line'></span>

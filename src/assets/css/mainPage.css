@@ -28,7 +28,7 @@ main.mainPageContext {
     display: block; }
   main.mainPageContext .searchArea .inputArea {
     display: flex;
-    margin-bottom: 400px; }
+    margin-bottom: 315px; }
     main.mainPageContext .searchArea .inputArea input {
       width: 600px;
       margin-right: 10px;
@@ -73,16 +73,25 @@ main.mainPageContext {
         main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-icon img {
           width: 30px;
           margin-top: 4px; }
-        main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text b {
-          font-size: 16px;
-          line-height: 20px;
-          margin: 0;
-          color: #090a0a; }
-        main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text p {
-          font-size: 14px;
-          line-height: 16px;
-          margin: 0;
-          color: #72777a; }
+        main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text {
+          width: 100%; }
+          main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text b {
+            font-size: 16px;
+            line-height: 20px;
+            margin: 0;
+            color: #090a0a; }
+          main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text b.notfound {
+            font-size: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+            color: #72777a; }
+          main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text p {
+            font-size: 14px;
+            line-height: 16px;
+            margin: 0;
+            color: #72777a; }
     main.mainPageContext .searchArea .dropdown .dropdown-content .showMore {
       width: 100%;
       text-align: center; }
@@ -93,6 +102,12 @@ main.mainPageContext {
         margin-top: 10px; }
         main.mainPageContext .searchArea .dropdown .dropdown-content .showMore b:hover {
           cursor: pointer; }
+
+.d-none {
+  display: none; }
+
+.d-block {
+  display: block; }
 
 footer {
   background: rgba(41, 78, 152, 0.72);

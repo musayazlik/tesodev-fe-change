@@ -5,10 +5,9 @@
   "jsxSingleQuote": true,
   "useTabs": false,
   "tabWidth": 2,
-  "parser": "flow",
   "usePrettierrc": false,
-  "semi": true,
+  "semi": false,
   "trailingComma": "none",
   "singleQuote": true,
-  "printWidth": 80
+  "printWidth": 300
 }

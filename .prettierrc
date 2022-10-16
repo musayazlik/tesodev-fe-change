@@ -5,7 +5,6 @@
   "jsxSingleQuote": true,
   "useTabs": false,
   "tabWidth": 2,
-  "parser": "flow",
   "usePrettierrc": false,
   "semi": true,
   "trailingComma": "none",

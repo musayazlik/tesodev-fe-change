@@ -20,21 +20,10 @@ import Search from '../components/Search/Search'
 import Footer from '../components/Footer/Footer'
 import Carousel from '../components/Carousel/Carousel'
 
-/* DB Url */
-const dbserver = process.env.REACT_APP_DB_SERVER
-
 const MainPage = () => {
   const { data, setData, searchValue, setSearchValue, dataFilter, setDataFilter, status, setStatus } = useContext(Context)
 
   const navigate = useNavigate()
-
-  /** The function from which the data is retrieved. */
-  useEffect(() => {
-    axios.get(`${dbserver}/data`).then((res) => {
-      setData(res.data)
-      setDataFilter(res.data)
-    })
-  }, [])
 
   return (
     <>
@@ -44,6 +33,7 @@ const MainPage = () => {
           customClass='buttonWrapper'
           onClick={() => {
             navigate('/add')
+            setStatus({ button: false, dropdown: false })
           }}
         />
       </header>
@@ -54,9 +44,12 @@ const MainPage = () => {
         </div>
         <Search></Search>
       </main>
-      <div style={{ display: 'flex' }} className=''>
-        <Carousel />
-      </div>
+      <section className='container'>
+        <h1 className='carouselTitle'>Top News</h1>
+        <div style={{ display: 'flex' }} className=''>
+          <Carousel />
+        </div>
+      </section>
       <Footer />
     </>
   )

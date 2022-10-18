@@ -2,199 +2,95 @@
 
 // Main Page
 
+header {
+  padding: 20px 20px 0 0;
+}
+
 main.mainPageContext {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	.logoArea {
-		margin-top: 120px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		.logo {
-			width: 300px;
-		}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logoArea {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      width: 300px;
+    }
 
-		.logo-text {
-			font-size: 0.9rem;
-			letter-spacing: 0.01rem;
-			font-weight: 900;
-			margin-top: 10px;
-			color: $text-light;
-			text-transform: uppercase;
-			margin-bottom: 1rem;
-			position: relative;
-			right: -140px;
-		}
-	}
+    .logo-text {
+      font-size: 0.9rem;
+      letter-spacing: 0.01rem;
+      font-weight: 900;
+      margin-top: 10px;
+      color: $text-light;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      position: relative;
+      right: -140px;
+    }
+  }
 
-	.searchArea {
-		label {
-			font-size: 2rem;
-			font-weight: 700;
-			color: $text-light;
-			margin: 40px 0 10px 0;
-			display: block;
-		}
-		.inputArea {
-			display: flex;
-			margin-bottom: 315px;
-
-			input {
-				width: 600px;
-				margin-right: 10px;
-				margin-top: 0 !important;
-				border: 0;
-				border-radius: 14px;
-				padding: 0 20px 0 50px;
-				font-size: 1.2rem;
-				font-weight: 600;
-				border: $searchInputBorder;
-				color: $text-light;
-				margin-top: 10px;
-				transition: background-color 0.3s ease-in-out;
-			}
-
-			.searchIcon {
-				position: absolute;
-				top: 20px;
-				left: 14px;
-
-				img {
-					width: 24px;
-				}
-			}
-		}
-
-		.dropdown {
-			top: 170px;
-			width: 88%;
-			border: $dropdownMenuBorder;
-			border-radius: 24px;
-			padding: 20px 30px;
-			left: -40px;
-
-			.dropdown-content {
-				.dropdown-item {
-					display: flex;
-					flex-direction: column;
-					gap: 10px;
-					margin-bottom: 20px;
-
-					.line {
-						height: 1px;
-						background: $dropdownMenuLine;
-						width: calc(100% - 38px);
-						transform: translateX(38px);
-						margin-top: 6px;
-					}
-
-					.dropdown-item-context {
-						display: flex;
-						align-items: center;
-						gap: 10px;
-						.dropdown-icon {
-							img {
-								width: 30px;
-								margin-top: 4px;
-							}
-						}
-						.dropdown-text {
-							width: 100%;
-							b {
-								font-size: 16px;
-								line-height: 20px;
-								margin: 0;
-								color: $text-black;
-							}
-
-							b.notfound {
-								font-size: 20px;
-								text-align: center;
-								display: flex;
-								justify-content: center;
-								padding: 30px 0;
-								color: $text-extralight;
-							}
-							p {
-								font-size: 14px;
-								line-height: 16px;
-								margin: 0;
-
-								color: $text-extralight;
-							}
-						}
-					}
-				}
-
-				.showMore {
-					width: 100%;
-					text-align: center;
-
-					b {
-						font-size: 1.2rem;
-						font-weight: 900;
-						color: $text-black;
-						margin-top: 10px;
-						&:hover {
-							cursor: pointer;
-						}
-					}
-				}
-			}
-		}
-	}
+  .inputArea {
+    margin-bottom: 320px;
+  }
 }
 
 .d-none {
-	display: none;
+  display: none;
 }
 
 .d-block {
-	display: block;
+  display: block;
+}
+
+.carouselTitle {
+  margin-left: 180px;
+  font-size: 32px;
 }
 
 footer {
-	background: $footer-bgColor;
-	padding: 30px;
+  background: $footer-bgColor;
+  padding: 30px;
 
-	.container {
-		max-width: 1200px;
-		margin: auto;
+  .container {
+    max-width: 1200px;
+    margin: auto;
 
-		.row {
-			display: flex;
-		}
-	}
+    .row {
+      display: flex;
+    }
+  }
 
-	.column-2 {
-		padding: 30px;
-		max-width: 500px;
+  .column-2 {
+    padding: 30px;
+    max-width: 500px;
 
-		address {
-			font-style: normal;
-			font-size: 18px;
-			line-height: 21px;
-			h3 {
-				margin: 0;
-				font-weight: 700;
-				color: $white;
-			}
-			p {
-				color: $white;
-				font-weight: 400;
-				margin: 0 0 40px 0;
-			}
-			strong {
-				color: $white;
-				font-weight: 700;
-				a {
-					text-decoration: none;
-					color: $white;
-					font-weight: 700;
-				}
-			}
-		}
-	}
+    address {
+      font-style: normal;
+      font-size: 18px;
+      line-height: 21px;
+      h3 {
+        margin: 0;
+        font-weight: 700;
+        color: $white;
+      }
+      p {
+        color: $white;
+        font-weight: 400;
+        margin: 0 0 40px 0;
+      }
+      strong {
+        color: $white;
+        font-weight: 700;
+        a {
+          text-decoration: none;
+          color: $white;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }

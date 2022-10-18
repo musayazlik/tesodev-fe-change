@@ -1,6 +1,9 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import { id } from 'nanoid'
+
+/** Context Api */
+import Context from '../context/Context'
 
 import '../assets/css/addLinkPage.css'
 
@@ -12,43 +15,38 @@ import HeaderLogo from '../assets/img/PageLogo.png'
 import ArrowLeft from '../assets/icons/ArrowLeft.svg'
 import { useId } from 'react'
 import { nanoid } from 'nanoid'
+import axios from 'axios'
 
 const AddLinkPage = () => {
   const navigate = useNavigate()
 
+  const { data, setData } = useContext(Context)
   const addLink = (e) => {
     e.preventDefault()
 
-    const NameSurname = e.target.nameusername.value
-    const Country = e.target.country.value
-    const Company = e.target.company.value
-    const City = e.target.city.value
-    const Email = e.target.email.value
     const id = nanoid()
-    const Datee = new Date().toLocaleString().split(',')[0]
+    const nameSurname = e.target.nameusername.value
+    const company = e.target.company.value
+    const email = e.target.email.value
+    const date = new Date().toLocaleString().split(',')[0]
+    const country = e.target.country.value
+    const city = e.target.city.value
 
-    const data = {
+    const newData = {
       id,
-      NameSurname,
-      Company,
-      Email,
-      Datee,
-      Country,
-      City
+      nameSurname,
+      company,
+      email,
+      date,
+      country,
+      city
     }
 
-    fetch('http://localhost:3005/data', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
+    axios.post('http://localhost:3005/data', newData).then((res) => {
+      console.log(res)
+      navigate('/')
+      setData([...data, newData])
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        navigate('/')
-      })
   }
 
   return (
@@ -56,17 +54,16 @@ const AddLinkPage = () => {
       <div className='container'>
         <div className='row flex-column'>
           <header className='ListPageHeader'>
-            <img className='logo' src={HeaderLogo} alt='Header alani logosudur' />
+            <Link to={'/'}>
+              <img className='logo' src={HeaderLogo} alt='Header alani logosudur' />
+            </Link>
 
-            <div
-              className='ListPageHeader__Prev'
-              onClick={() => {
-                navigate('/')
-              }}
-            >
-              <img src={ArrowLeft} alt='Arrow Icon' />
-              <h2>Return to List Page</h2>
-            </div>
+            <Link to={'/list'}>
+              <div className='ListPageHeader__Prev'>
+                <img src={ArrowLeft} alt='Arrow Icon' />
+                <h2>Return to List Page</h2>
+              </div>
+            </Link>
           </header>
           <div className='context'>
             <form

@@ -1,3 +1,6 @@
+header {
+  padding: 20px 20px 0 0; }
+
 main.mainPageContext {
   display: flex;
   flex-direction: column;
@@ -20,94 +23,18 @@ main.mainPageContext {
       margin-bottom: 1rem;
       position: relative;
       right: -140px; }
-  main.mainPageContext .searchArea label {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #484949;
-    margin: 40px 0 10px 0;
-    display: block; }
-  main.mainPageContext .searchArea .inputArea {
-    display: flex;
-    margin-bottom: 315px; }
-    main.mainPageContext .searchArea .inputArea input {
-      width: 600px;
-      margin-right: 10px;
-      margin-top: 0 !important;
-      border: 0;
-      border-radius: 14px;
-      padding: 0 20px 0 50px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border: 2px solid #204080;
-      color: #484949;
-      margin-top: 10px;
-      transition: background-color 0.3s ease-in-out; }
-    main.mainPageContext .searchArea .inputArea .searchIcon {
-      position: absolute;
-      top: 20px;
-      left: 14px; }
-      main.mainPageContext .searchArea .inputArea .searchIcon img {
-        width: 24px; }
-  main.mainPageContext .searchArea .dropdown {
-    top: 170px;
-    width: 88%;
-    border: 1px solid #484848;
-    border-radius: 24px;
-    padding: 20px 30px;
-    left: -40px; }
-    main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px; }
-      main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .line {
-        height: 1px;
-        background: #f2f4f5;
-        width: calc(100% - 38px);
-        transform: translateX(38px);
-        margin-top: 6px; }
-      main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context {
-        display: flex;
-        align-items: center;
-        gap: 10px; }
-        main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-icon img {
-          width: 30px;
-          margin-top: 4px; }
-        main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text {
-          width: 100%; }
-          main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text b {
-            font-size: 16px;
-            line-height: 20px;
-            margin: 0;
-            color: #090a0a; }
-          main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text b.notfound {
-            font-size: 20px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            padding: 30px 0;
-            color: #72777a; }
-          main.mainPageContext .searchArea .dropdown .dropdown-content .dropdown-item .dropdown-item-context .dropdown-text p {
-            font-size: 14px;
-            line-height: 16px;
-            margin: 0;
-            color: #72777a; }
-    main.mainPageContext .searchArea .dropdown .dropdown-content .showMore {
-      width: 100%;
-      text-align: center; }
-      main.mainPageContext .searchArea .dropdown .dropdown-content .showMore b {
-        font-size: 1.2rem;
-        font-weight: 900;
-        color: #090a0a;
-        margin-top: 10px; }
-        main.mainPageContext .searchArea .dropdown .dropdown-content .showMore b:hover {
-          cursor: pointer; }
+  main.mainPageContext .inputArea {
+    margin-bottom: 320px; }
 
 .d-none {
   display: none; }
 
 .d-block {
   display: block; }
+
+.carouselTitle {
+  margin-left: 180px;
+  font-size: 32px; }
 
 footer {
   background: rgba(41, 78, 152, 0.72);

@@ -1,20 +1,33 @@
-import { Route, Routes } from 'react-router'
+import { Route, Routes } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-import { useState } from 'react'
-
+/** Context */
 import Context from './context/Context'
 
+/** Components */
 import MainPage from './pages/MainPage'
-
 import ListPage from './pages/ListPage'
-
 import AddLinkPage from './pages/AddLinkPage'
+
+/* DB Url */
+const dbserver = process.env.REACT_APP_DB_SERVER
 
 function App() {
   const [data, setData] = useState([])
   const [searchValue, setSearchValue] = useState('')
   const [dataFilter, setDataFilter] = useState([])
-  const [status, setStatus] = useState({ button: false, dropdown: false })
+  const [status, setStatus] = useState({ button: false, dropdown: false, orderDropDown: false, orderDropDownText: 'Order By' })
+  const [orderDropDown, setOrderDropDown] = useState({ status: false, order: 'asc', orderBy: 'Order By' })
+
+  /** The function from which the data is retrieved. */
+  useEffect(() => {
+    axios.get(`${dbserver}/data`).then((res) => {
+      setData(res.data)
+      setDataFilter(res.data)
+    })
+  }, [])
+
   const Store = {
     data,
     setData,
@@ -23,7 +36,9 @@ function App() {
     dataFilter,
     setDataFilter,
     status,
-    setStatus
+    setStatus,
+    orderDropDown,
+    setOrderDropDown
   }
 
   return (

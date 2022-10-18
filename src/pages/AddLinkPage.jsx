@@ -5,6 +5,8 @@ import { id } from 'nanoid'
 /** Context Api */
 import Context from '../context/Context'
 
+/** Style */
+
 import '../assets/css/addLinkPage.css'
 
 /**
@@ -20,33 +22,41 @@ import axios from 'axios'
 const AddLinkPage = () => {
   const navigate = useNavigate()
 
-  const { data, setData } = useContext(Context)
+  const { data, setData, setStatus } = useContext(Context)
   const addLink = (e) => {
     e.preventDefault()
 
     const id = nanoid()
-    const nameSurname = e.target.nameusername.value
-    const company = e.target.company.value
-    const email = e.target.email.value
+    const nameSurname = e.target.nameusername?.value
+    const company = e.target.company?.value
+    const email = e.target.email?.value
     const date = new Date().toLocaleString().split(',')[0]
-    const country = e.target.country.value
-    const city = e.target.city.value
+    const country = e.target.country?.value
+    const city = e.target.city?.value
 
-    const newData = {
-      id,
-      nameSurname,
-      company,
-      email,
-      date,
-      country,
-      city
+    if (nameSurname.length >= 2) {
+      const newData = {
+        id,
+        nameSurname,
+        company,
+        email,
+        date,
+        country,
+        city
+      }
+
+      axios.post('http://localhost:3005/data', newData).then((res) => {
+        console.log(res)
+        navigate('/')
+        setData([...data, newData])
+      })
+    } else {
+      setStatus({ ...status, alert: true })
+
+      setTimeout(() => {
+        setStatus({ ...status, alert: false })
+      }, 3000)
     }
-
-    axios.post('http://localhost:3005/data', newData).then((res) => {
-      console.log(res)
-      navigate('/')
-      setData([...data, newData])
-    })
   }
 
   return (

@@ -9,6 +9,7 @@ import Context from './context/Context'
 import MainPage from './pages/MainPage'
 import ListPage from './pages/ListPage'
 import AddLinkPage from './pages/AddLinkPage'
+import Alert from './components/Alert/Alert'
 
 /* DB Url */
 const dbserver = process.env.REACT_APP_DB_SERVER
@@ -17,7 +18,7 @@ function App() {
   const [data, setData] = useState([])
   const [searchValue, setSearchValue] = useState('')
   const [dataFilter, setDataFilter] = useState([])
-  const [status, setStatus] = useState({ button: false, dropdown: false, orderDropDown: false, orderDropDownText: 'Order By' })
+  const [status, setStatus] = useState({ button: false, dropdown: false, orderDropDown: false, orderDropDownText: 'Order By', alert: false })
   const [orderDropDown, setOrderDropDown] = useState({ status: false, order: 'asc', orderBy: 'Order By' })
 
   /** The function from which the data is retrieved. */
@@ -50,6 +51,7 @@ function App() {
           <Route path='add' element={<AddLinkPage />} />
         </Routes>
       </Context.Provider>
+      {status.alert && <Alert status={status} setStatus={setStatus} />}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useLocation, Link, useNavigate } from 'react-router-dom'
 
 /** Context */
@@ -20,7 +20,11 @@ import orderImg from '../assets/icons/Sort.svg'
 const ListPage = () => {
   const location = useLocation()
   const navigate = useNavigate()
+
   const { dataFilter, setDataFilter, status, setStatus, filterDropDownText, filterDropDown, orderDropDown, setOrderDropDown } = useContext(Context)
+
+  const [pagination, setPagination] = useState({ currentPage: 1, dataPerPage: 5 })
+  const totalPage = Math.ceil(dataFilter.length / pagination.dataPerPage - 1)
 
   if (orderDropDown.order === 'nameAsc') {
     setDataFilter(dataFilter.sort((a, b) => a.nameSurname.localeCompare(b.nameSurname)))
@@ -41,6 +45,58 @@ const ListPage = () => {
     })
     setDataFilter(order)
   } else {
+  }
+
+  const paginationPage = (page) => {
+    setPagination({ ...pagination, currentPage: page })
+    console.log(page)
+  }
+
+  const paginationArea = () => {
+    const items = []
+    let threePoints = true
+    for (let number = 1; number <= totalPage; number++) {
+      if (number <= 3 || number >= totalPage - 2 || (number >= pagination.currentPage - 1 && number <= pagination.currentPage + 1)) {
+        items.push(
+          <li key={number} className={`page-item ${pagination.currentPage === number ? 'active' : ''}`}>
+            <a
+              className='page-link'
+              onClick={() => {
+                paginationPage(number)
+              }}
+            >
+              {number}
+            </a>
+          </li>
+        )
+      } else {
+        if (threePoints === true) {
+          items.push(
+            <li key={number} className='page-item threePoints'>
+              <a className='page-link'>...</a>
+            </li>
+          )
+          threePoints = false
+        }
+      }
+    }
+    return items
+  }
+
+  const paginationNext = () => {
+    if (pagination.currentPage < totalPage) {
+      setPagination({ ...pagination, currentPage: pagination.currentPage + 1 })
+    } else {
+      setPagination({ ...pagination, currentPage: totalPage })
+    }
+  }
+
+  const paginationPrev = () => {
+    if (pagination.currentPage > 1) {
+      setPagination({ ...pagination, currentPage: pagination.currentPage - 1 })
+    } else {
+      setPagination({ ...pagination, currentPage: 1 })
+    }
   }
 
   return (
@@ -65,7 +121,7 @@ const ListPage = () => {
         <main className='listMain'>
           <div className='col-left'>
             {dataFilter?.length > 0 ? (
-              dataFilter.map((item, index) => {
+              dataFilter.slice(pagination.currentPage * pagination.dataPerPage, pagination.dataPerPage * (pagination.currentPage + 1)).map((item, index) => {
                 return (
                   <div key={index} className='list-item'>
                     <div className='list-item-context'>
@@ -97,6 +153,35 @@ const ListPage = () => {
                 <span className='line'></span>
               </div>
             )}
+
+            <nav aria-label='navigation'>
+              <ul className='pagination'>
+                <li className='page-item previous'>
+                  <a
+                    className='page-link'
+                    onClick={() => {
+                      paginationPrev()
+                    }}
+                  >
+                    Previous
+                  </a>
+                </li>
+
+                {paginationArea()}
+
+                <li className='page-item next'>
+                  <a
+                    onClick={() => {
+                      paginationNext()
+                    }}
+                    className='page-link'
+                    href='#'
+                  >
+                    Next
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className='col-right'>
             <div className='order'>

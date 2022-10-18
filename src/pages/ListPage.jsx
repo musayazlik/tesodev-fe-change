@@ -175,7 +175,6 @@ const ListPage = () => {
                       paginationNext()
                     }}
                     className='page-link'
-                    href='#'
                   >
                     Next
                   </a>
